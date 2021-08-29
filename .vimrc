@@ -47,6 +47,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 call plug#begin('~/.vim/plugged')
 
 " List Plugins
-Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/seoul256.vim'
+Plug 'benbusby/vim-earthbound-themes'
 
 call plug#end()
+
+au BufEnter * :source ~/.vim/plugged/vim-earthbound-themes/extend-syntax.vim
