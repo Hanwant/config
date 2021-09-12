@@ -49,7 +49,11 @@ call plug#begin('~/.vim/plugged')
 " List Plugins
 " Plug 'junegunn/seoul256.vim'
 Plug 'benbusby/vim-earthbound-themes'
+Plug 'liuchengxu/space-vim-theme'
 
 call plug#end()
+
+set background=dark
+colorscheme space_vim_theme
 
 au BufEnter * :source ~/.vim/plugged/vim-earthbound-themes/extend-syntax.vim
