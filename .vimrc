@@ -54,4 +54,5 @@ Plug 'liuchengxu/space-vim-theme'
 call plug#end()
 
 set background=dark
+colorscheme space_vim_theme
 au BufEnter * :source ~/.vim/plugged/vim-earthbound-themes/extend-syntax.vim
