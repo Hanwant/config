@@ -33,8 +33,15 @@ set comments=sl:/*,mb:\ *,elx:\ */)
 set wildmenu
 set wildmode=list:longest,full
 
+" Pane nav
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
+" Escape
 inoremap fd <Esc>
+inoremap jj <Esc>
 
 
 " automatically install vim-plug
