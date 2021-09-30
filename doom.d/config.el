@@ -52,12 +52,19 @@
   (doom-themes-org-config)
   )
 
-(setq key-chord-two-keys-delay 0.5)
+(use-package evil-surround
+  :ensure t
+  :config
+  (setq global-evil-surround-mode 1))
+
+(setq key-chord-two-keys-delay 0.2)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 (key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
-
 (key-chord-mode 1)
 
+;; PYTHON INTERPRETER SETTING
+(setq python-shell-interpreter "~/miniconda3/envs/main/bin/python" 
+      flycheck-python-pycompile-executable "/usr/local/bin/python3")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
