@@ -1,8 +1,48 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"
+" " let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'preservim/nerdtree'
+
+" Plugin 'python-mode/python-mode'
+
+Plugin 'nvie/vim-flake8'
+
+Plugin 'jnurmine/Zenburn'
+
+Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+Bundle 'Valloric/YouCompleteMe'
+"
+" " add all your plugins here (note older versions of Vundle
+" " used Bundle instead of Plugin)
+"
+" " ...
+"
+" " All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let python_highlight_all=1
+syntax on
+
+"
+"
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
 " shows commands being typed
 set showcmd
 " " use indentation of previous line
@@ -44,22 +84,13 @@ inoremap fd <Esc>
 inoremap jj <Esc>
 
 
-" automatically install vim-plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
+au BufNewFile, BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
-call plug#begin('~/.vim/plugged')
 
-" List Plugins
-" Plug 'junegunn/seoul256.vim'
-Plug 'benbusby/vim-earthbound-themes'
-Plug 'liuchengxu/space-vim-theme'
-
-call plug#end()
-
-set background=dark
-colorscheme space_vim_theme
-au BufEnter * :source ~/.vim/plugged/vim-earthbound-themes/extend-syntax.vim
